@@ -8,11 +8,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// Created the function as variable for test coverage
+// FunctionCreate Created the function as variable for test coverage
 var FunctionCreate = db.CreateTask
 
-// adds command to list & store in it DB.
-// Here we have used cobra libraries to add the tasks
+// AddCmd adds command to list & store in it DB. Here we have used cobra libraries to add the tasks
 var AddCmd = &cobra.Command{
 	Use:   "add",
 	Short: "Add the todo list tasks",

@@ -10,7 +10,7 @@ import (
 	"github.com/poonam-wani/gophercises/CLI/db"
 )
 
-// This function is covering the negative unit tests for adding the task in DB
+// TestAddCmd This function is covering the negative unit tests for adding the task in DB
 func TestAddCmd(t *testing.T) {
 
 	home, _ := homeDir.Dir()

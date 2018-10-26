@@ -8,6 +8,7 @@ import (
 	homeDir "github.com/mitchellh/go-homedir"
 )
 
+// TestInitNegative This function intialize db by passing the directory only
 func TestInitNegative(t *testing.T) {
 
 	err := Init("/")
@@ -16,6 +17,7 @@ func TestInitNegative(t *testing.T) {
 	}
 }
 
+// TestInitPositive This function intialize db
 func TestInitPositive(t *testing.T) {
 
 	home, _ := homeDir.Dir()
@@ -26,6 +28,7 @@ func TestInitPositive(t *testing.T) {
 	}
 }
 
+// TestCreateTaskpositive This function
 func TestCreateTaskpositive(t *testing.T) {
 
 	_, err := CreateTask("temp task")
@@ -35,6 +38,7 @@ func TestCreateTaskpositive(t *testing.T) {
 
 }
 
+// TestGetAllTaskLists This function covers the unit test of list of tasks
 func TestGetAllTaskLists(t *testing.T) {
 
 	_, err := GetAllLists()
@@ -43,6 +47,7 @@ func TestGetAllTaskLists(t *testing.T) {
 	}
 }
 
+// TestDeleteTasks This function covers unit test of deleted task
 func TestDeleteTasks(t *testing.T) {
 
 	err := DeleteTasks(3)
@@ -51,6 +56,7 @@ func TestDeleteTasks(t *testing.T) {
 	}
 }
 
+// TestItob This function covers unit test of integer to byte conversion
 func TestItob(t *testing.T) {
 	var actual []byte
 	actual = itob(5)
@@ -59,6 +65,7 @@ func TestItob(t *testing.T) {
 	}
 }
 
+// TestBtoi This function covers unit tests of byte to integer conversion
 func TestBtoi(t *testing.T) {
 
 	var exp []byte

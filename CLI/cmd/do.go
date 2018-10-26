@@ -8,10 +8,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// Created the function as a variable for test coverage
+// FunctionDo Created the function as a variable for test coverage
 var FunctionDo = db.DeleteTasks
 
-// doCmd represents the do command
+// DoCmd represents the do command
 var DoCmd = &cobra.Command{
 	Use:   "do",
 	Short: "do is used to mark the task as complete",

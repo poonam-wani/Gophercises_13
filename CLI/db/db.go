@@ -8,6 +8,7 @@ import (
 	"github.com/boltdb/bolt"
 )
 
+// Task structure
 type Task struct {
 	Key   int
 	Value string
@@ -16,7 +17,7 @@ type Task struct {
 var taskBucket = []byte("tasks")
 var db *bolt.DB
 
-// Initialize & open the database connection
+// Init Initialize & open the database connection
 func Init(dbPath string) error {
 	var err error
 	db, err = bolt.Open(dbPath, 0600, &bolt.Options{Timeout: 1 * time.Second})
@@ -33,9 +34,7 @@ func Init(dbPath string) error {
 	})
 }
 
-/* This function is used to add the task in database
-and it will return the taskno with error
-*/
+// CreateTask This function is used to add the task in database and it will return the taskno with error
 func CreateTask(task string) (int, error) {
 	var taskno int
 
@@ -52,9 +51,7 @@ func CreateTask(task string) (int, error) {
 	return taskno, err
 }
 
-/* This function is used to list all the  tasks present in database
-and it will return the tasks with error
-*/
+// GetAllLists This function is used to list all the  tasks present in database and it will return the tasks with error
 func GetAllLists() ([]Task, error) {
 
 	var tasks []Task
@@ -74,9 +71,7 @@ func GetAllLists() ([]Task, error) {
 	return tasks, err
 }
 
-/* This function is used to delete the added task in database
-and it will return the error if task is not deleted from the db
-*/
+// DeleteTasks This function is used to delete the added task in database and it will return the error if task is not deleted from the db
 func DeleteTasks(key int) error {
 
 	return db.Update(func(tx *bolt.Tx) error {
@@ -86,7 +81,7 @@ func DeleteTasks(key int) error {
 
 }
 
-// This function is used to convert integer value in byte
+// itob This function is used to convert integer value in byte
 
 func itob(v int) []byte {
 
@@ -95,7 +90,7 @@ func itob(v int) []byte {
 	return b
 }
 
-// This function is used to convert byte to integer
+// btoi This function is used to convert byte to integer
 
 func btoi(b []byte) int {
 

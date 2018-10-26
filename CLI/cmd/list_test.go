@@ -7,7 +7,7 @@ import (
 	"github.com/poonam-wani/gophercises/CLI/db"
 )
 
-// This function covers the unit tests when haven't pass any value with list command
+// TestListCmd This function covers the unit tests when haven't pass any value with list command
 func TestListCmd(t *testing.T) {
 
 	tmpList := FunctionList
@@ -23,7 +23,7 @@ func TestListCmd(t *testing.T) {
 	ListCmd.Run(ListCmd, a)
 }
 
-// This function covers the unit tests when we have passed the blank string as argument
+// TestListCmdEmpty This function covers the unit tests when we have passed the blank string as argument
 func TestListCmdEmpty(t *testing.T) {
 
 	tmpList := FunctionList
@@ -39,7 +39,7 @@ func TestListCmdEmpty(t *testing.T) {
 	ListCmd.Run(ListCmd, a)
 }
 
-// This function covers the positive part of list command
+// TestListCmdPositive This function covers the positive part of list command
 func TestListCmdPositive(t *testing.T) {
 
 	a := []string{}

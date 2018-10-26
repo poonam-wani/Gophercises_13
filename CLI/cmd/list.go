@@ -7,10 +7,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// Created the function as variable for test coverage
+// FunctionList Created the function as variable for test coverage
 var FunctionList = db.GetAllLists
 
-// listCmd represents the list command
+// ListCmd represents the list command
 var ListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "list is used to list down all the tasks",
